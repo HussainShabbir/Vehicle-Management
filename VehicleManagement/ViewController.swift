@@ -57,7 +57,6 @@ class ViewController: NSViewController,AddVehicleViewControllerDelegate {
     
     func outlineView(outlineView: NSOutlineView, isGroupItem item: AnyObject) -> Bool{
         let model = item.representedObject as! GroupModel
-        print(model.itemName)
         if (model.isDataItem == true && model.isChildItem == true){
             return true
         }
