@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class GroupModel: NSObject {
+class VMModel: NSObject {
     let itemName : String
     let itemDescription : String
     let isDataItem : Bool

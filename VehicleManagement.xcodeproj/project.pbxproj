@@ -9,17 +9,18 @@
 /* Begin PBXBuildFile section */
 		9718D2AF1CB1CC7C003F25CB /* bike.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9718D2AD1CB1CC7C003F25CB /* bike.jpg */; };
 		9718D2B01CB1CC7C003F25CB /* car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9718D2AE1CB1CC7C003F25CB /* car.jpg */; };
-		9744CF081C8AC9CA0047F64B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9744CF071C8AC9CA0047F64B /* AppDelegate.swift */; };
-		9744CF0A1C8AC9CA0047F64B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9744CF091C8AC9CA0047F64B /* ViewController.swift */; };
+		9718D2B21CB1D19F003F25CB /* VMConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9718D2B11CB1D19F003F25CB /* VMConstant.swift */; };
+		9744CF081C8AC9CA0047F64B /* VMAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9744CF071C8AC9CA0047F64B /* VMAppDelegate.swift */; };
+		9744CF0A1C8AC9CA0047F64B /* VMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9744CF091C8AC9CA0047F64B /* VMViewController.swift */; };
 		9744CF0C1C8AC9CA0047F64B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9744CF0B1C8AC9CA0047F64B /* Assets.xcassets */; };
 		9744CF0F1C8AC9CA0047F64B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9744CF0D1C8AC9CA0047F64B /* Main.storyboard */; };
 		9744CF1A1C8AC9CA0047F64B /* VehicleManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9744CF191C8AC9CA0047F64B /* VehicleManagementTests.swift */; };
 		9744CF251C8AC9CA0047F64B /* VehicleManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9744CF241C8AC9CA0047F64B /* VehicleManagementUITests.swift */; };
-		9744CF361C8ADC030047F64B /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9744CF351C8ADC030047F64B /* GroupModel.swift */; };
-		9744CF3D1C8ADD710047F64B /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9744CF3C1C8ADD710047F64B /* ModelController.swift */; };
-		9744CF3F1C8ADDE90047F64B /* VehicleManagementModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9744CF3E1C8ADDE90047F64B /* VehicleManagementModelController.swift */; };
-		9744CF411C8AE0440047F64B /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9744CF401C8AE0440047F64B /* WindowController.swift */; };
-		97ED4FE41C8CB7970030E8F7 /* AddVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ED4FE31C8CB7970030E8F7 /* AddVehicleViewController.swift */; };
+		9744CF361C8ADC030047F64B /* VMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9744CF351C8ADC030047F64B /* VMModel.swift */; };
+		9744CF3D1C8ADD710047F64B /* VMBaseModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9744CF3C1C8ADD710047F64B /* VMBaseModelController.swift */; };
+		9744CF3F1C8ADDE90047F64B /* VMModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9744CF3E1C8ADDE90047F64B /* VMModelController.swift */; };
+		9744CF411C8AE0440047F64B /* VMWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9744CF401C8AE0440047F64B /* VMWindowController.swift */; };
+		97ED4FE41C8CB7970030E8F7 /* VMNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ED4FE31C8CB7970030E8F7 /* VMNewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +43,10 @@
 /* Begin PBXFileReference section */
 		9718D2AD1CB1CC7C003F25CB /* bike.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bike.jpg; path = VehicleManagement/Images/bike.jpg; sourceTree = "<group>"; };
 		9718D2AE1CB1CC7C003F25CB /* car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = car.jpg; path = VehicleManagement/Images/car.jpg; sourceTree = "<group>"; };
+		9718D2B11CB1D19F003F25CB /* VMConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMConstant.swift; sourceTree = "<group>"; };
 		9744CF041C8AC9CA0047F64B /* VehicleManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9744CF071C8AC9CA0047F64B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9744CF091C8AC9CA0047F64B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9744CF071C8AC9CA0047F64B /* VMAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMAppDelegate.swift; sourceTree = "<group>"; };
+		9744CF091C8AC9CA0047F64B /* VMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMViewController.swift; sourceTree = "<group>"; };
 		9744CF0B1C8AC9CA0047F64B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9744CF0E1C8AC9CA0047F64B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9744CF101C8AC9CA0047F64B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,11 +56,11 @@
 		9744CF201C8AC9CA0047F64B /* VehicleManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VehicleManagementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9744CF241C8AC9CA0047F64B /* VehicleManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleManagementUITests.swift; sourceTree = "<group>"; };
 		9744CF261C8AC9CA0047F64B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9744CF351C8ADC030047F64B /* GroupModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupModel.swift; path = Models/GroupModel.swift; sourceTree = "<group>"; };
-		9744CF3C1C8ADD710047F64B /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelController.swift; path = ModelController/ModelController.swift; sourceTree = "<group>"; };
-		9744CF3E1C8ADDE90047F64B /* VehicleManagementModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VehicleManagementModelController.swift; path = ModelController/VehicleManagementModelController.swift; sourceTree = "<group>"; };
-		9744CF401C8AE0440047F64B /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		97ED4FE31C8CB7970030E8F7 /* AddVehicleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVehicleViewController.swift; sourceTree = "<group>"; };
+		9744CF351C8ADC030047F64B /* VMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VMModel.swift; path = Models/VMModel.swift; sourceTree = "<group>"; };
+		9744CF3C1C8ADD710047F64B /* VMBaseModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VMBaseModelController.swift; path = ModelController/VMBaseModelController.swift; sourceTree = "<group>"; };
+		9744CF3E1C8ADDE90047F64B /* VMModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VMModelController.swift; path = ModelController/VMModelController.swift; sourceTree = "<group>"; };
+		9744CF401C8AE0440047F64B /* VMWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMWindowController.swift; sourceTree = "<group>"; };
+		97ED4FE31C8CB7970030E8F7 /* VMNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMNewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,13 +123,14 @@
 		9744CF061C8AC9CA0047F64B /* VehicleManagement */ = {
 			isa = PBXGroup;
 			children = (
-				9744CF071C8AC9CA0047F64B /* AppDelegate.swift */,
-				9744CF091C8AC9CA0047F64B /* ViewController.swift */,
+				9744CF071C8AC9CA0047F64B /* VMAppDelegate.swift */,
+				9744CF091C8AC9CA0047F64B /* VMViewController.swift */,
 				9744CF0B1C8AC9CA0047F64B /* Assets.xcassets */,
 				9744CF0D1C8AC9CA0047F64B /* Main.storyboard */,
 				9744CF101C8AC9CA0047F64B /* Info.plist */,
-				9744CF401C8AE0440047F64B /* WindowController.swift */,
-				97ED4FE31C8CB7970030E8F7 /* AddVehicleViewController.swift */,
+				9744CF401C8AE0440047F64B /* VMWindowController.swift */,
+				97ED4FE31C8CB7970030E8F7 /* VMNewViewController.swift */,
+				9718D2B11CB1D19F003F25CB /* VMConstant.swift */,
 			);
 			path = VehicleManagement;
 			sourceTree = "<group>";
@@ -153,7 +156,7 @@
 		9744CF321C8AD9F60047F64B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9744CF351C8ADC030047F64B /* GroupModel.swift */,
+				9744CF351C8ADC030047F64B /* VMModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -161,8 +164,8 @@
 		9744CF3B1C8ADD560047F64B /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
-				9744CF3C1C8ADD710047F64B /* ModelController.swift */,
-				9744CF3E1C8ADDE90047F64B /* VehicleManagementModelController.swift */,
+				9744CF3C1C8ADD710047F64B /* VMBaseModelController.swift */,
+				9744CF3E1C8ADDE90047F64B /* VMModelController.swift */,
 			);
 			name = ModelController;
 			sourceTree = "<group>";
@@ -299,13 +302,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9744CF0A1C8AC9CA0047F64B /* ViewController.swift in Sources */,
-				9744CF3F1C8ADDE90047F64B /* VehicleManagementModelController.swift in Sources */,
-				9744CF081C8AC9CA0047F64B /* AppDelegate.swift in Sources */,
-				97ED4FE41C8CB7970030E8F7 /* AddVehicleViewController.swift in Sources */,
-				9744CF3D1C8ADD710047F64B /* ModelController.swift in Sources */,
-				9744CF411C8AE0440047F64B /* WindowController.swift in Sources */,
-				9744CF361C8ADC030047F64B /* GroupModel.swift in Sources */,
+				9718D2B21CB1D19F003F25CB /* VMConstant.swift in Sources */,
+				9744CF0A1C8AC9CA0047F64B /* VMViewController.swift in Sources */,
+				9744CF3F1C8ADDE90047F64B /* VMModelController.swift in Sources */,
+				9744CF081C8AC9CA0047F64B /* VMAppDelegate.swift in Sources */,
+				97ED4FE41C8CB7970030E8F7 /* VMNewViewController.swift in Sources */,
+				9744CF3D1C8ADD710047F64B /* VMBaseModelController.swift in Sources */,
+				9744CF411C8AE0440047F64B /* VMWindowController.swift in Sources */,
+				9744CF361C8ADC030047F64B /* VMModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

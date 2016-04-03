@@ -8,28 +8,28 @@
 
 import Cocoa
 
-class VehicleManagementModelController: ModelController {
+class VMModelController: VMBaseModelController {
 
-    var groupModel : GroupModel!
-    var dataModelOfFourWheeler : GroupModel!
-    var dataModelOfTwoWheeler : GroupModel!
-    override func updateModel() ->  GroupModel?{
-        self.groupModel = GroupModel(itemName: "Vehicle Types", itemDescription : "This contains the types of vehicle",isDataItem:true, isChildItem: true, image: NSImage(named: "car")!)
+    var groupModel : VMModel!
+    var dataModelOfFourWheeler : VMModel!
+    var dataModelOfTwoWheeler : VMModel!
+    override func updateModel() ->  VMModel?{
+        self.groupModel = VMModel(itemName: kVehicleTypes, itemDescription : kHeaderDescription,isDataItem:true, isChildItem: true, image: NSImage(named: kCarImage)!)
         
-        dataModelOfFourWheeler = GroupModel(itemName: "Four Wheeler",itemDescription : "This contains the list of Four Wheeler",isDataItem:false, isChildItem: true, image: NSImage(named: "car")!)
+        dataModelOfFourWheeler = VMModel(itemName: kFourWheeler,itemDescription : kFourWheelerDescription,isDataItem:false, isChildItem: true, image: NSImage(named: kCarImage)!)
         
-        dataModelOfFourWheeler.dataList.append(GroupModel(itemName: "Maruti",itemDescription : "This is the Maruti 800",isDataItem:false, isChildItem: false, image: NSImage(named: "car")!))
+        dataModelOfFourWheeler.dataList.append(VMModel(itemName: kFourWheelerName,itemDescription : kFourWheelerDescription,isDataItem:false, isChildItem: false, image: NSImage(named: kCarImage)!))
         
-        dataModelOfTwoWheeler = GroupModel(itemName: "Two Wheeler",itemDescription : "This is the two Wheeler",isDataItem:false, isChildItem: true, image: NSImage(named: "bike")!)
+        dataModelOfTwoWheeler = VMModel(itemName: kTwoWheeler,itemDescription : kTwoWheelerDescriptionHeader,isDataItem:false, isChildItem: true, image: NSImage(named: kBikeImage)!)
             
-        dataModelOfTwoWheeler.dataList.append(GroupModel(itemName: "Motor Cycle",itemDescription : "This is the the Yamaha FZ",isDataItem:false, isChildItem: false, image: NSImage(named: "bike")!))
+        dataModelOfTwoWheeler.dataList.append(VMModel(itemName: kMotorCycle,itemDescription : kTwoWheelerDescriptionHeader,isDataItem:false, isChildItem: false, image: NSImage(named: kBikeImage)!))
         
         self.groupModel.dataList.append(dataModelOfFourWheeler)
         self.groupModel.dataList.append(dataModelOfTwoWheeler)
         return self.groupModel!
     }
     
-    func addModelInList(model : GroupModel, vehicleType withTypes : String) -> GroupModel
+    func addModelInList(model : VMModel, vehicleType withTypes : String) -> VMModel
     {
         if (self.dataModelOfFourWheeler.itemName == withTypes)
         {
@@ -39,11 +39,10 @@ class VehicleManagementModelController: ModelController {
         {
             self.dataModelOfTwoWheeler.dataList.append(model)
         }
-        print(self.groupModel)
         return self.groupModel
     }
     
-    func removeModelInList(model : GroupModel,vehicleType withTypes : String) -> GroupModel
+    func removeModelInList(model : VMModel,vehicleType withTypes : String) -> VMModel
     {
         if (self.dataModelOfFourWheeler.itemName == withTypes)
         {

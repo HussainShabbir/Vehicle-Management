@@ -7,15 +7,14 @@
 //
 
 import Cocoa
-// typealias isBool = Bool
-class ViewController: NSViewController,AddVehicleViewControllerDelegate {
+class VMViewController: NSViewController,VMNewViewControllerDelegate {
 
     @IBOutlet weak var outlineView : NSOutlineView!
     @IBOutlet weak var scrollView : NSScrollView!
     @IBOutlet weak var imageView : NSImageView!
     var arrayList = [AnyObject]()
     var arrayOfTableList = [AnyObject]()
-    var modelController : VehicleManagementModelController!
+    var modelController : VMModelController!
     dynamic var isAdd : Bool = false
     dynamic var isRemove : Bool = false
     override func viewDidLoad() {
@@ -29,9 +28,9 @@ class ViewController: NSViewController,AddVehicleViewControllerDelegate {
         didSet {
         // Update the view, if already loaded.
 
-            self.willChangeValueForKey("arrayList")
+            self.willChangeValueForKey(kArrayList)
             arrayList.append(self.representedObject!)
-            self.didChangeValueForKey("arrayList")
+            self.didChangeValueForKey(kArrayList)
             self.outlineView.expandItem(nil, expandChildren: true)
             if (self.outlineView.numberOfRows > 1){
                 self.outlineView.selectRowIndexes(NSIndexSet(index: 1), byExtendingSelection: false)
@@ -42,21 +41,21 @@ class ViewController: NSViewController,AddVehicleViewControllerDelegate {
     
     func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView?{
         var cellView : NSTableCellView!
-        let model = item.representedObject as! GroupModel
+        let model = item.representedObject as! VMModel
         if (model.isDataItem == true && model.isChildItem == true){
-            cellView = outlineView.makeViewWithIdentifier("HeaderCell", owner: self) as! NSTableCellView
+            cellView = outlineView.makeViewWithIdentifier(KHeaderCell, owner: self) as! NSTableCellView
         }
         else if (model.isDataItem == false && model.isChildItem == true){
-            cellView = outlineView.makeViewWithIdentifier("DataCell", owner: self) as! NSTableCellView
+            cellView = outlineView.makeViewWithIdentifier(kDataCell, owner: self) as! NSTableCellView
         }
         else if (model.isDataItem == false && model.isChildItem == false){
-            cellView = outlineView.makeViewWithIdentifier("ChildCell", owner: self) as! NSTableCellView
+            cellView = outlineView.makeViewWithIdentifier(kChildCell, owner: self) as! NSTableCellView
         }
         return cellView
     }
     
     func outlineView(outlineView: NSOutlineView, isGroupItem item: AnyObject) -> Bool{
-        let model = item.representedObject as! GroupModel
+        let model = item.representedObject as! VMModel
         if (model.isDataItem == true && model.isChildItem == true){
             return true
         }
@@ -80,9 +79,9 @@ class ViewController: NSViewController,AddVehicleViewControllerDelegate {
         let node = self.outlineView.itemAtRow(rowIndex!)
         let modelItem = node?.representedObject
         if (modelItem != nil){
-            let model = modelItem as! GroupModel
+            let model = modelItem as! VMModel
             updateTableList(model)
-            if (model.itemName == "Four Wheeler" || model.itemName == "Two Wheeler")
+            if (model.itemName == kFourWheeler || model.itemName == kTwoWheeler)
             {
                 self.isRemove = false
             }
@@ -96,7 +95,7 @@ class ViewController: NSViewController,AddVehicleViewControllerDelegate {
     func outlineView(outlineView: NSOutlineView, shouldSelectItem item: AnyObject) -> Bool
     {
         var shouldSelectRow : Bool = false
-        let model = item.representedObject as! GroupModel
+        let model = item.representedObject as! VMModel
         if (model.isDataItem == false && model.isChildItem == true){
             shouldSelectRow = true
         }
@@ -109,7 +108,7 @@ class ViewController: NSViewController,AddVehicleViewControllerDelegate {
     func outlineView(outlineView: NSOutlineView, shouldShowOutlineCellForItem item: AnyObject) -> Bool
     {
         var shouldShowRow : Bool = false
-        let model = item.representedObject as! GroupModel
+        let model = item.representedObject as! VMModel
         if (model.isDataItem == false && model.isChildItem == true){
             shouldShowRow = true
         }
@@ -119,7 +118,7 @@ class ViewController: NSViewController,AddVehicleViewControllerDelegate {
         return shouldShowRow
     }
     
-    func updateTableList(model : GroupModel)
+    func updateTableList(model : VMModel)
     {
         let array : [AnyObject]?
         if (model.dataList.count > 0){
@@ -130,9 +129,9 @@ class ViewController: NSViewController,AddVehicleViewControllerDelegate {
             array = [AnyObject]()
             array?.append(model)
         }
-        self.willChangeValueForKey("arrayOfTableList")
+        self.willChangeValueForKey(kArrayOfTableList)
         self.arrayOfTableList = array!
-        self.didChangeValueForKey("arrayOfTableList")
+        self.didChangeValueForKey(kArrayOfTableList)
     }
     
     
@@ -140,16 +139,16 @@ class ViewController: NSViewController,AddVehicleViewControllerDelegate {
     {
         let index = self.outlineView.selectedRow
         let item = self.outlineView.itemAtRow(index)
-        let childItemModel = item?.representedObject as! GroupModel
+        let childItemModel = item?.representedObject as! VMModel
         let obj = self.outlineView?.parentForItem(item)
-        let parentItemModel = obj?.representedObject as! GroupModel
-        if (parentItemModel.itemName == "Four Wheeler" || parentItemModel.itemName == "Two Wheeler")
+        let parentItemModel = obj?.representedObject as! VMModel
+        if (parentItemModel.itemName == kFourWheeler || parentItemModel.itemName == kTwoWheeler)
         {
             let model = self.modelController.removeModelInList(childItemModel, vehicleType: parentItemModel.itemName)
-            self.willChangeValueForKey("arrayList")
+            self.willChangeValueForKey(kArrayList)
             self.arrayList = []
             arrayList.append(model)
-            self.didChangeValueForKey("arrayList")
+            self.didChangeValueForKey(kArrayList)
             if (self.outlineView.numberOfRows > 1){
                 self.outlineView.selectRowIndexes(NSIndexSet(index: 1), byExtendingSelection: false)
                 self.isRemove = true
@@ -162,18 +161,18 @@ class ViewController: NSViewController,AddVehicleViewControllerDelegate {
     }
     
     override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
-     let vwController = segue.destinationController as! AddVehicleViewController
+     let vwController = segue.destinationController as! VMNewViewController
         vwController.delegate = self
     }
     
     
-    func addModelInList(model: GroupModel, vehicleType withTypes: String)
+    func addModelInList(model: VMModel, vehicleType withTypes: String)
     {
        let model = self.modelController.addModelInList(model,vehicleType: withTypes)
         self.arrayList = []
-        self.willChangeValueForKey("arrayList")
+        self.willChangeValueForKey(kArrayList)
         self.arrayList.append(model)
-        self.didChangeValueForKey("arrayList")
+        self.didChangeValueForKey(kArrayList)
         if (self.outlineView.numberOfRows > 1){
             self.outlineView.selectRowIndexes(NSIndexSet(index: 1), byExtendingSelection: false)
             self.isAdd = true

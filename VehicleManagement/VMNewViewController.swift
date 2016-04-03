@@ -8,17 +8,17 @@
 
 import Cocoa
 
-protocol AddVehicleViewControllerDelegate{
-    func addModelInList(model : GroupModel, vehicleType withTypes : String)
+protocol VMNewViewControllerDelegate{
+    func addModelInList(model : VMModel, vehicleType withTypes : String)
 }
 
-class AddVehicleViewController: NSViewController {
-    var delegate : AddVehicleViewControllerDelegate?
-    var viewController : ViewController!
+class VMNewViewController: NSViewController {
+    var delegate : VMNewViewControllerDelegate?
+    var viewController : VMViewController!
     var vehicleType : String?
     var vehicleItem : String?
     var vehicleDescription : String?
-    dynamic var isDoneButtonEnable : Bool = false
+    dynamic var isDoneButtonEnable  = false
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -26,11 +26,7 @@ class AddVehicleViewController: NSViewController {
     
     
     @IBAction func doSaveOnDone(sender : AnyObject){
-        
-        print(vehicleType)
-        print(vehicleItem)
-        print(vehicleDescription)
-        let model = GroupModel(itemName: vehicleItem!, itemDescription: vehicleDescription!, isDataItem: false, isChildItem: false, image: (vehicleType == "Four Wheeler") ? NSImage(named: "car")! : NSImage(named: "bike")!)
+        let model = VMModel(itemName: vehicleItem!, itemDescription: vehicleDescription!, isDataItem: false, isChildItem: false, image: (vehicleType == kFourWheeler) ? NSImage(named: kCarImage)! : NSImage(named: kBikeImage)!)
         self.delegate?.addModelInList(model, vehicleType: self.vehicleType!)
         self.dismissController(self)
     }

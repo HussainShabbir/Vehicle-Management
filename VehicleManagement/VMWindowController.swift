@@ -8,13 +8,13 @@
 
 import Cocoa
 
-class WindowController: NSWindowController {
+class VMWindowController: NSWindowController {
     var arrayList = [AnyObject]()
     override func windowDidLoad() {
         super.windowDidLoad()
-        let modelController = VehicleManagementModelController()
+        let modelController = VMModelController()
         let model = modelController.updateModel()
-        let vwController = self.contentViewController as! ViewController
+        let vwController = self.contentViewController as! VMViewController
         vwController.modelController = modelController
         self.contentViewController?.representedObject = model
 

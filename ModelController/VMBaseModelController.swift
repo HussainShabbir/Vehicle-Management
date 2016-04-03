@@ -8,8 +8,8 @@
 
 import Cocoa
 
-class ModelController: NSObject {
-    func updateModel() -> GroupModel?{
+class VMBaseModelController: NSObject {
+    func updateModel() -> VMModel?{
         return nil
     }
 }
