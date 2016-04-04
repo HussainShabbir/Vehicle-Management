@@ -46,7 +46,7 @@ class VMModelController: VMBaseModelController {
     {
         if (self.dataModelOfFourWheeler.itemName == withTypes)
         {
-            for (var index = 0; index < self.dataModelOfFourWheeler.dataList.count; index++)
+            for index in (0..<self.dataModelOfFourWheeler.dataList.count)
             {
                 let childModel = self.dataModelOfFourWheeler.dataList[index]
                 if (childModel.itemName == model.itemName){
@@ -56,7 +56,7 @@ class VMModelController: VMBaseModelController {
         }
         else if (self.dataModelOfTwoWheeler.itemName == withTypes)
         {
-            for (var index = 0; index < self.dataModelOfTwoWheeler.dataList.count; index++)
+            for index in (0..<self.dataModelOfTwoWheeler.dataList.count)
             {
                 let childModel = self.dataModelOfTwoWheeler.dataList[index]
                 if (childModel.itemName == model.itemName){
